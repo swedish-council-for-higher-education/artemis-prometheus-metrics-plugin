@@ -20,10 +20,24 @@ under the License.
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
    <modelVersion>4.0.0</modelVersion>
-   <groupId>org.apache.activemq</groupId>
+   <groupId>se.uhr.activemq</groupId>
    <artifactId>artemis-prometheus-metrics-pom</artifactId>
    <packaging>pom</packaging>
-   <version>1.1.0</version>
+   <version>0.0.1-SNAPSHOT</version>
+
+   <scm>
+      <connection>scm:git:git@github.com:swedish-council-for-higher-education/artemis-prometheus-metrics-plugin.git</connection>
+      <url>https://github.com/swedish-council-for-higher-education/artemis-prometheus-metrics-plugin.git</url>
+      <developerConnection>scm:git:git@github.com:swedish-council-for-higher-education/artemis-prometheus-metrics-plugin.git</developerConnection>
+      <tag>HEAD</tag>
+   </scm>
+   <distributionManagement>
+      <repository>
+         <id>github</id>
+         <name>GitHub Packages</name>
+         <url>https://maven.pkg.github.com/swedish-council-for-higher-education/artemis-prometheus-metrics-plugin</url>
+      </repository>
+   </distributionManagement>
 
    <modules>
       <module>artemis-prometheus-metrics-plugin-servlet</module>

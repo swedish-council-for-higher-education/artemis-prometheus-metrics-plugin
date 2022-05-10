@@ -22,9 +22,9 @@ under the License.
    <modelVersion>4.0.0</modelVersion>
 
    <parent>
-      <groupId>org.apache.activemq</groupId>
+      <groupId>se.uhr.activemq</groupId>
       <artifactId>artemis-prometheus-metrics-pom</artifactId>
-      <version>1.1.0</version>
+      <version>0.0.1-SNAPSHOT</version>
    </parent>
 
    <artifactId>artemis-prometheus-metrics-plugin</artifactId>
