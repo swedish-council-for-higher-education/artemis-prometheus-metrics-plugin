@@ -12,13 +12,13 @@ jobs:
 
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up JDK 11
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v3
       with:
         java-version: '11'
         distribution: 'adopt'
@@ -35,3 +35,17 @@ jobs:
       run: ./mvnw -s $GITHUB_WORKSPACE/settings.xml deploy
       env:
         GITHUB_TOKEN: ${{ github.token }}
+
+    - name: Upload JAR
+      uses: jasonetco/upload-to-release@v0.1.1
+      with:
+        args: artemis-prometheus-metrics-plugin/target/artemis-prometheus-metrics-plugin-${{ github.event.release.tag_name }}.jar application/java-archive
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload WAR
+      uses: jasonetco/upload-to-release@v0.1.1
+      with:
+        args: artemis-prometheus-metrics-plugin-servlet/target/metrics.war application/java-archive
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
